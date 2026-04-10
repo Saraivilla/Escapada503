@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}"></a>
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+    <!--FUENTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header_style">
+            <div class="contenido_header">
+                <div class="left_section">
+                    <a href="{% url 'index-url' %}"><img class="logo" src="{% static 'img/logo.png' %}"
+                            alt="Logo de Escapada 503"></a>
+                    <h2 class="header_titulo">Escapada 503</h2>
+                </div>
+                <div class="barraBusqueda">
+                    <label class="lbl_busqueda">Busqueda</label>
+                    <input class="barra" type="text" id="searchInput">
+                </div>
+                <div class="hamburger">&#9776;</div>
+            </div>
+
+            <div class="menu_opcionesHeader" id="menu_opcionesHeader">
+                <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                <a href="{% url 'blog-url' %}">Blog</a>
+                <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+
+                <!-- Nueva sección de usuario -->
+                <div class="user_section">
+                    <div class="user_info" id="userInfo">
+                        <span class="user_name">{{user.username}}</span>
+                        <span class="user_menu">&#9662;</span>
+                    </div>
+                    <div class="user_options" id="userOptions">
+                        <a href="{% url 'reservas' %}">Reservas</a>
+                        <a href="{% url 'perfil' %}">Editar info</a>
+                        <a href="{% url 'cambioContraseña' %}">Cambiar Contraseña</a>
+                        <a href="{% url 'login' %}" id="logoutLink">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 class="perfil_titulo">Datos Personales</h1>
+    <div class="perfil_contenedor">
+        <form method="post" class="perfil_form">
+            {% csrf_token %}
+            <div>
+                <!--Img-->
+                <div class="perfil_contenedorImg">
+                    <img class="perfil_img" src="{% static 'img/FotoPerfil1.png' %}">
+                </div>
+            </div>
+            <div class="perfil_campos">
+                <div class="perfil_columna">
+                    <!--Usuario-->
+                    <div>
+                        <label class=perfil_label>Usuario: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUser.username}}
+                            <div class="perfil_error"> {{ formUser.username.errors}}</div>
+                        </div>
+                    </div>
+                    <!--Nombre-->
+                    <div>
+                        <label class=perfil_label>Nombres: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUser.first_name}}
+                            <div class="perfil_error"> {{ formUser.first_name.errors}}</div>
+                        </div>
+
+                    </div>
+                    <!--Apellido-->
+                    <div>
+                        <label class=perfil_label>Apellidos: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUser.last_name}}
+                            <div class="perfil_error"> {{ formUser.last_name.errors}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perfil_columna">
+                    <!--Telefono-->
+                    <div>
+                        <label class=perfil_label>Teléfono: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUsuarios.telefono}}
+                            <div class="perfil_error"> {{ formUsuarios.telefono.errors}}</div>
+                        </div>
+                    </div>
+                    <!--Correo-->
+                    <div>
+                        <label class=perfil_label>Correo: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUser.email}}
+                            <div class="perfil_error"> {{ formUser.email.errors}}</div>
+                        </div>
+                    </div>
+                    <!--Dui-->
+                    <div>
+                        <label class="perfil_label">No.Dui: </label><br>
+                        <div class="perfil_contenedorError">
+                            {{ formUsuarios.dui}}
+                            <div class="perfil_error">{{ formUsuarios.dui.errors}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="perfil_guardar">
+                <button class="perfilbtn" type="submit">Actualizar Información</button>
+            </div>
+        </form>
+
+    </div>
+    <!--Apartado del Footer-->
+    <footer>
+        <div class="footer_style">
+            <div clas=footer_contenido>
+                <div>
+                    <h2 class="footer_titulo">Escapada 503</h2>
+                </div>
+
+                <div class="contactos">
+                    <a href="#"><img src="{% static 'img/instagram.png' %}"></a>
+                    <a href="mailto:ejemplo@gmail.com"><img src="{% static 'img/correo.png' %}"></a>
+                    <a href="https://wa.me/78776390"><img src="{% static 'img/whatsapp.png' %}"></a>
+                    <a href="tel:+50378776390"><img src="{% static 'img/Telefono.png' %}"></a>
+                </div>
+
+                <div class="menu_opciones">
+                    <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                    <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                    <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                    <a href="{% url 'blog-url' %}">Blog</a>
+                    <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+                </div>
+
+                <div class="derechos">
+                    <p>
+                        Copyright © 2024 Escapada 503. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (logoutLink) {
+                logoutLink.addEventListener('click', function (event) {
+                    const isConfirmed = confirm("¿Estás seguro de que quieres cerrar sesión?");
+                    if (!isConfirmed) {
+                        event.preventDefault(); // Evita que el enlace sea seguido
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="{% static 'contactoScripts.js' %}"></script>
+</body>
+
+</html>

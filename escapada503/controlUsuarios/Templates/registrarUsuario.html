@@ -1,0 +1,117 @@
+<!-- registro.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registro</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!--FUENTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="registro_contenedor">
+
+        <form id="registroForm" method="post" class="registro_form" onsubmit="return mostrarMensaje()">
+            <div class="encabezadoForm">
+                <img class="logo" src="{% static 'img/logo.png' %}">
+                <h1 class="registro_titulo">Registro de Usuario</h1>
+            </div>
+            <div id="mensajeExito" style="display:none; color: green; font-weight: bold;"></div>
+
+            {% csrf_token %}
+            <div class="registro_campos">
+                <div class="registro_columna">
+                    <!--Username-->
+                    <div>
+                        <label class="registro_label">{{ form.username.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.username }}
+                            <div class="registro_error">{{ form.username.errors }}</div>
+                        </div>
+                    </div>
+                    <!--First Name-->
+                    <div>
+                        <label class="registro_label">{{ form.first_name.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.first_name }}
+                            <div class="registro_error">{{ form.first_name.errors }}</div>
+                        </div>
+                    </div>
+                    <!--Last Name-->
+                    <div>
+                        <label class="registro_label">{{ form.last_name.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.last_name }}
+                            <div class="registro_error">{{ form.last_name.errors }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="registro_columna">
+                    <!--Email-->
+                    <div>
+                        <label class="registro_label">{{ form.email.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.email }}
+                            <div class="registro_error">{{ form.email.errors }}</div>
+                        </div>
+                    </div>
+                    <!--Password1-->
+                    <div>
+                        <label class="registro_label">{{ form.password1.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.password1 }}
+                            <div class="registro_error">{{ form.password1.errors }}</div>
+                        </div>
+                    </div>
+                    <!--Password2-->
+                    <div>
+                        <label class="registro_label">{{ form.password2.label_tag }}</label><br>
+                        <div class="registroContenedorError">
+                            {{ form.password2 }}
+                            <div class="registro_error">{{ form.password2.errors }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registroContenedorbtn">
+                <button type="submit" class="registrobtn">Registrarse</button>
+            </div>
+            <p class="login_crear"><a href="{% url 'login' %}" class="login_crear">¡Ya tengo cuenta!</a></p>
+
+        </form>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+
+    </div>
+
+
+
+
+
+    <script>
+        const loginUrl = "{% url 'login' %}"; // Genera la URL de login en el HTML
+    </script>
+    <script src="{% static 'Registrar.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="shortcut icon" href="{% static 'login.css' %}" type="image/x-icon">
+    <!--FUENTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <!-- Ajustado el contenedor para coincidir con el estilo original -->
+            <form method="post" action="{% url 'registro' %}">
+                {% csrf_token %}
+                <h1>Crear Cuenta</h1>
+
+                <div class="registro_campos">
+                    <div class="registro_columna">
+                        <!--Nombre-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="text" name="first_name" placeholder="Nombre" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                        <!--Apellido-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="text" name="last_name" placeholder="Apellido" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                        <!--Usuario-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="text" name="username" placeholder="Usuario" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="registro_columna">
+                        <!--Email-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="email" name="email" placeholder="Correo" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                        <!--Contraseña-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="password" name="password1" placeholder="Contraseña" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                        <!--Confirme Contraseña-->
+                        <div>
+
+                            <div class="registroContenedorError">
+                                <input type="password" name="password2" placeholder="Confirme Contraseña" />
+                                <!-- Aquí puedes añadir lógica para mostrar errores -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Regístrate</button>
+
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form method="post" action="{% url 'login' %}">
+                <div class = "logoImg">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo">
+                </div>
+                
+                <h1>Iniciar Sesión</h1>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <input type="text" name="username" placeholder="Usuario" required />
+                <div class="login_error">{{ form.username.errors }}</div>
+                <input type="password" name="password" placeholder="Contraseña" required />
+                <div class="login_error">{{ form.password.errors }}</div>
+                <a>¿Olvidaste la contraseña?</a>
+
+                <button type="submit">Iniciar</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bienvenido</h1>
+                    <p>Para iniciar sesión, presiona el botón</p>
+                    <button class="ghost" id="signIn">Iniciar Sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>¿No tienes cuenta?</h1>
+
+                    <p>Registra tus datos para poder iniciar sesión</p>
+                    <a href="{% url 'registro' %}"><button class="ghost">Regístrate Ahora</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

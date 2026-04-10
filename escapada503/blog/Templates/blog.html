@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blogStyles.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+
+    <!--Estilos de letra de nuestra paginita -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header_style">
+            <div class="contenido_header">
+                <div class="left_section">
+                    <a href="{% url 'index-url' %}"><img class="logo" src="{% static 'img/logo.png' %}"
+                            alt="Logo de Escapada 503"></a>
+                    <h2 class="header_titulo">Escapada 503</h2>
+                </div>
+                <div class="barraBusqueda">
+                    <label class="lbl_busqueda">Busqueda</label>
+                    <input class="searchInput barra" type="text">
+                </div>
+                <div class="hamburger">
+                    &#9776;
+                </div>
+
+
+            </div>
+
+            <div class="menu_opcionesHeader" id="menu_opcionesHeader">
+
+                <div class="barraBusqueda_Menu">
+                    <label class="lbl_busqueda">Busqueda</label>
+                    <input class="searchInput barra" type="text">
+                </div>
+                <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                <a href="{% url 'blog-url' %}">Blog</a>
+                <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+
+                <!-- Nueva sección de usuario -->
+                <div class="user_section">
+                    <div class="user_info" id="userInfo">
+                        <span class="user_name">{{user.username}}</span>
+                        <span class="user_menu">&#9662;</span>
+                    </div>
+                    <div class="user_options" id="userOptions">
+                        <a href="{% url 'reservas' %}">Reservas</a>
+                        <a href="{% url 'perfil' %}">Editar info</a>
+                        <a href="{% url 'cambioContraseña' %}">Cambiar Contraseña</a>
+                        <a href="{% url 'login' %}" id="logoutLink">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h1 class="titleNosotros">NUESTRO BLOG</h1>
+
+    <div class="centrar contenido">
+        <div class="container">
+            <div class="wrapper">
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="{% static 'img/turista1.jpg' %}" class="client-img" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h2>Ulises</h2>
+                        <p class="review">¡Una experiencia increíble! Los guías fueron muy profesionales y conocían a fondo cada lugar que visitamos. Definitivamente recomendaría Escapada503 a cualquiera que quiera explorar El Salvador.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="{% static 'img/turista2.jpg' %}" class="client-img" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h2>Sarai</h2>
+                        <p class="review">Quedamos encantados con el servicio que recibimos. Los paquetes turísticos ofrecieron una excelente relación calidad-precio y los guías fueron simplemente los mejores. Recomiendo a Escapada503 sin reservas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-thumb">
+                        <img src="{% static 'img/turista3.jpeg' %}" class="client-img" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h2>Gisela</h2>
+                        <p class="review">Un viaje inolvidable. Los guías fueron extremadamente profesionales y conocían muchos detalles interesantes sobre los lugares que visitamos. Toda la experiencia fue muy agradable y bien organizada.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="indicators">
+                <button class="active"></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <!--Este parte permite crear una linea divisora para colocar el texto-->
+    <div class="divisor divisorLugares">
+        <hr class="lineaSeparadora">
+        <h2 class="textoDivisor">Reseñas destacadas</h2>
+    </div>
+
+    <!--APARTADO DE RESEÑAS DE LUGARES-->
+
+    <div class="containerReseña contenido">
+        <div class="cardReseña">
+            <h2>Volcán Ilamatepec, Santa Ana</h2>
+            <p>"Escapada503 hizo de nuestra visita al Volcán Ilamatepeque una experiencia extraordinaria. La caminata fue desafiante pero muy gratificante, y nuestro guía fue muy atento y conocedor de la historia y geología del volcán. Las vistas desde la cima eran impresionantes. Recomiendo este tour a todos los aventureros." - Marcos Berrios
+            </p>
+
+            <div class="rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+            </div>
+
+        </div>
+        <div class="cardReseña">
+            <img src="{% static 'img/Ilamatepec.jpg' %}" alt="">
+        </div>
+    </div>
+
+    <div class="containerReseña contenido">
+
+        <div class="cardReseña">
+            <img src="{% static 'img/puertaDelDiablo.webp' %}" alt="">
+        </div>
+
+        <div class="cardReseña">
+            <h2>La puerta del Diablo, Los Planes de Renderos </h2>
+            <p>"Explorar La Puerta del Diablo con Escapada503 fue una aventura increíble. Nuestro guía nos contó muchas leyendas e historias fascinantes del lugar. Las vistas panorámicas desde los acantilados eran simplemente espectaculares. Una experiencia que no olvidaré. ¡Gracias infinitas, Escapada503!" - Alexander Linares
+            </p>
+
+            <div class="rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="containerReseña contenido">
+        <div class="cardReseña">
+            <h2>Laguna de Apastepeque, San Vicente</h2>
+            <p>"Visitar la Laguna de Apastepeque con Escapada503 fue una experiencia fantástica. Nuestro guía nos proporcionó información fascinante sobre la laguna y su historia. Disfrutamos de la tranquilidad del lugar y de las vistas impresionantes. ¡Muy recomendable!" - Carlos Diaz
+            </p>
+
+            <div class="rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+            </div>
+
+        </div>
+        <div class="cardReseña">
+            <img src="{% static 'img/Apastepeque.jpg' %}" alt="">
+        </div>
+    </div>
+
+    <div class="containerReseña contenido">
+
+        <div class="cardReseña">
+            <img src="{% static 'img/Trifinio.webp' %}" alt="">
+        </div>
+
+        <div class="cardReseña">
+            <h2>Parque Nacional Montecristo, Santa Ana</h2>
+            <p>"Mi visita al Parque Nacional Montecristo con Escapada503 fue increíble. Nuestro guía fue muy profesional y compartió mucha información interesante sobre la flora y fauna del parque. La caminata fue bien organizada y las vistas desde el mirador eran impresionantes. Recomiendo este tour a cualquier amante de la naturaleza. ¡Gracias por una experiencia inolvidable!" - Daniela Morales
+            </p>
+
+            <div class="rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Apartado del Footer-->
+    <footer>
+        <div class="footer_style">
+            <div clas=footer_contenido>
+                <div>
+                    <h2 class="footer_titulo">Escapada 503</h2>
+                </div>
+
+                <div class="contactos">
+                    <a href="#"><img src="{% static 'img/instagram.png' %}"></a>
+                    <a href="mailto:ejemplo@gmail.com"><img src="{% static 'img/correo.png' %}"></a>
+                    <a href="https://wa.me/78776390"><img src="{% static 'img/whatsapp.png' %}"></a>
+                    <a href="tel:+50378776390"><img src="{% static 'img/Telefono.png' %}"></a>
+                </div>
+
+                <div class="menu_opciones">
+                    <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                    <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                    <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                    <a href="{% url 'blog-url' %}">Blog</a>
+                    <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+                </div>
+
+                <div class="derechos">
+                    <p>
+                        Copyright © 2024 Escapada 503. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (logoutLink) {
+                logoutLink.addEventListener('click', function (event) {
+                    const isConfirmed = confirm("¿Estás seguro de que quieres cerrar sesión?");
+                    if (!isConfirmed) {
+                        event.preventDefault(); // Evita que el enlace sea seguido
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="{% static 'scriptsBlog.js' %}"></script>
+</body>
+
+</html>

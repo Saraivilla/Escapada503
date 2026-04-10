@@ -1,0 +1,453 @@
+/*---FORMULARIO-----*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* HEADER */
+.header_style {
+    display: flex;
+    flex-direction: column;
+    background-color: #00377B;
+}
+
+.contenido_header {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    /* Alinea los elementos verticalmente al centro */
+}
+
+.left_section {
+    display: flex;
+    align-items: center;
+}
+
+.header_titulo {
+    color: white;
+    font-size: 45px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.menu_opcionesHeader {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    background-color: #02489e;
+    padding: 10px;
+}
+
+.menu_opcionesHeader a,
+.menu_opciones a {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.menu_opcionesHeader a:hover {
+    color: rgb(249, 252, 62);
+}
+
+.logo {
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+}
+
+.barraBusqueda {
+    margin-right: 10px;
+}
+
+.barra {
+    border-radius: 20px;
+    width: 400px;
+    border-color: transparent;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/*Barra de Menu*/
+.barraBusqueda_Menu {
+    display: none;
+}
+
+.lbl_busqueda {
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.lbl_busqueda {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+/*CODIGO DE LA SESION DE CERRAR USUARIO*/
+.user_section {
+    position: relative;
+    display: inline-block;
+}
+
+.user_info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user_name {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_menu {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.user_options a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user_options a:hover {
+    background-color: #f1f1f1;
+    color: #00377B;
+}
+
+/*APARTADO DEL FOOTER (FINAL DE LA PAGINA)*/
+.footer_style {
+    background-color: #00377B;
+    padding: 5px;
+}
+
+.footer_contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_titulo {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.contactos {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.menu_opciones {
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.derechos {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/*Encabezado form*/
+.form_encabezado {
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+
+.form_frase {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*FORMULARIO*/
+.form_contenedor {
+    border: 1px solid black;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+    width: 75%;
+    margin-bottom: 200px;
+}
+
+.form_filaCampos {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.form_campos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form_campos label,
+.form_comentario label {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.form_campos input {
+    width: 90%;
+    margin: 10px 0 40px 0;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.form_comentario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+.form_comentario textarea {
+    resize: none;
+    height: 80px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0 20px 0;
+    width: 100%;
+}
+
+/*BOTÓN ENVIAR FORMULARIO*/
+.form_btnenviar {
+    text-align: center;
+}
+
+.form_btnenviar button {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    background-color: #00377B;
+    border: 1px solid transparent;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form_btnenviar button:hover {
+    border: 1px solid #00377B;
+    background-color: white;
+    color: #02489e;
+}
+
+@media only screen and (max-width: 768px) {
+    .form_encabezado {
+        font-size: 75px;
+    }
+
+    .form_frase {
+        font-size: 20px;
+    }
+
+    .form_contenedor {
+        width: 70%;
+        padding: 20px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .form_filaCampos {
+        flex-direction: column;
+
+    }
+
+    .form_comentario {
+        width: 75%;
+
+    }
+
+    .form_btnenviar button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form_encabezado {
+        font-size: 45px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .form_frase {
+        font-size: 18px;
+    }
+
+    .form_contenedor {
+        width: 90%;
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+    .form_campos label,
+    .form_comentario label {
+        font-size: 18px;
+    }
+
+    .form_campos input {
+        font-size: 16px;
+    }
+
+    .form_comentario textarea {
+        font-size: 16px;
+    }
+
+    .form_btnenviar button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+/*Este apartado de Codigo permite la responsibidad*/
+@media (max-width: 768px) {
+    .barraBusqueda {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+    }
+
+    .menu_opcionesHeader {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .menu_opcionesHeader a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .barraBusqueda_Menu {
+        display: flex;
+        /* Mostrar la barra de búsqueda dentro del menú hamburguesa */
+        margin-bottom: 10px;
+        /* Espacio opcional debajo de la barra de búsqueda */
+    }
+
+    .barra {
+        border-radius: 20px;
+        width: 200px;
+        border-color: transparent;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .menu_opcionesHeader.show {
+        display: flex;
+    }
+
+    .form_label {
+        font-size: 1em;
+    }
+
+    .header_titulo {
+        display: none;
+    }
+
+
+    /*FOOTER RESPONSIVE*/
+    .footer_contenido {
+        flex-direction: column;
+    }
+
+    .contactos {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu_opciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        /* Ajusta el espacio entre los elementos */
+    }
+
+    .footer_titulo {
+        font-size: 25px;
+        /* Reducir el tamaño del título para dispositivos más pequeños */
+    }
+}

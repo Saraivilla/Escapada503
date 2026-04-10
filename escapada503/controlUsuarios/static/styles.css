@@ -1,0 +1,880 @@
+/*---DATOS PERFIL---*/
+.perfil_titulo {
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+.perfil_contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 60px;
+}
+
+.perfil_form {
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 60%;
+    max-width: 90%;
+    border-radius: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.perfil_campos {
+    display: flex;
+    flex-direction: row;
+    gap: 85px;
+}
+
+.perfil_columna {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.perfil_guardar {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.perfilbtn {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #00377B;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.perfilbtn:hover {
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgb(32, 186, 29);
+    background-color: rgb(32, 186, 29);
+}
+
+.perfil_contenedorImg {
+    display: flex;
+    justify-content: center;
+
+}
+
+.perfil_img {
+    width: 175px;
+}
+
+.perfil_form input[type=text],
+.perfil_form input[type=email],
+.perfil_form input[type=password] {
+    font-size: 18px;
+    max-width: 100%;
+    border: 1px solid black;
+    padding: 6px;
+    width: 300px;
+}
+
+.perfil_form label {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.perfil_ContenedorError {
+    position: relative;
+    width: 100%;
+}
+
+.perfil_error {
+    position: absolute;
+    color: red;
+
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+    .perfil_campos {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .perfil_form {
+        width: 80%;
+    }
+
+    .perfil_form input[type=text],
+    .perfil_form input[type=email],
+    .perfil_form input[type=password] {
+        font-size: 14px;
+        padding: 6px;
+        width: 250px;
+    }
+
+    .perfil_columna {
+        gap: 25px;
+    }
+
+    .perfil_img {
+        width: 120px;
+    }
+
+    .perfilbtn {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    .perfilForm_titulo {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .perfil_form {
+        padding: 20px;
+    }
+
+    .perfilbtn {
+        width: 180px;
+        font-size: 14px;
+    }
+}
+
+/*---FORMULARIO-----*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* HEADER */
+.header_style {
+    display: flex;
+    flex-direction: column;
+    background-color: #00377B;
+}
+
+.mensajeHeader {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 100px;
+}
+
+.contenido_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_section {
+    display: flex;
+    align-items: center;
+}
+
+.header_titulo {
+    color: white;
+    font-size: 45px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.menu_opcionesHeader {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    background-color: #02489e;
+    padding: 10px;
+}
+
+.menu_opcionesHeader a,
+.menu_opciones a {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.menu_opcionesHeader a:hover {
+    color: rgb(249, 252, 62);
+}
+
+.logo {
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+}
+
+.barraBusqueda {
+    margin-right: 10px;
+}
+
+.barra {
+    border-radius: 20px;
+    width: 400px;
+    border-color: transparent;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.barraBusqueda_Menu {
+    display: none;
+}
+
+.lbl_busqueda {
+    margin-right: 10px;
+}
+
+
+#results {
+    margin-top: 20px;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.lbl_busqueda {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+/*CODIGO DE LA SESION DE CERRAR USUARIO*/
+.user_section {
+    position: relative;
+    display: inline-block;
+}
+
+.user_info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user_name {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_menu {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.user_options a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user_options a:hover {
+    background-color: #f1f1f1;
+    color: #00377B;
+}
+
+/*APARTADO DEL FOOTER (FINAL DE LA PAGINA)*/
+.footer_style {
+    background-color: #00377B;
+    padding: 5px;
+}
+
+.footer_contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_titulo {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.contactos {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.menu_opciones {
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.derechos {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/*Este apartado de Codigo permite la responsibidad*/
+@media (max-width: 768px) {
+    .barraBusqueda {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+    }
+
+    .menu_opcionesHeader {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .barraBusqueda_Menu {
+        display: flex;
+        /* Mostrar la barra de búsqueda dentro del menú hamburguesa */
+        margin-bottom: 10px;
+        /* Espacio opcional debajo de la barra de búsqueda */
+    }
+
+    .barra {
+        border-radius: 20px;
+        width: 200px;
+        border-color: transparent;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .menu_opcionesHeader a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu_opcionesHeader.show {
+        display: flex;
+    }
+
+    .mensajeHeader {
+        font-size: 1.5em;
+    }
+
+    .form_label {
+        font-size: 1em;
+    }
+
+    .divisor {
+        margin-bottom: 100px;
+    }
+
+    .header_titulo {
+        display: none;
+    }
+
+
+    /*FOOTER RESPONSIVE*/
+    .footer_contenido {
+        flex-direction: column;
+    }
+
+    .contactos {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu_opciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        /* Ajusta el espacio entre los elementos */
+    }
+
+    .footer_titulo {
+        font-size: 25px;
+        /* Reducir el tamaño del título para dispositivos más pequeños */
+    }
+}
+
+/*---------------------*/
+/*CAMBIO DE CONTRASEÑA*/
+/*---------------------*/
+.contraseña_Contenedor {
+    display: flex;
+    justify-content: center;
+
+}
+
+.contraseña_form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    max-width: 80%;
+    padding: 30px;
+}
+
+.contraseñaBtn {
+    margin: 50px auto;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #00377B;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.contraseñaBtn:hover {
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgb(32, 186, 29);
+    background-color: rgb(32, 186, 29);
+}
+
+.contraseña_encabezado {
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+    font-size: 90px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contraseña_info {
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 40px;
+
+}
+
+.contraseña_elementos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contraseña_ayuda {
+    width: 400px;
+}
+
+.form_grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contraseña_campos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+/*REGISTRO DE USUARIO*/
+/* ESTILOS REGISTRO */
+.registro_titulo {
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+
+.registro_contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 60px;
+    min-width: 400px;
+    margin-bottom: 100px;
+}
+
+.login_crear {
+    font-size: 20px;
+}
+
+.registro_form {
+    background-color: rgba(203, 203, 203, 0.679);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    max-width: 90%;
+    border-radius: 10px;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+
+.encabezadoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.registro_campos {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.registro_columna {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.registro_titulo {
+    font-size: 45px;
+}
+
+.registro_label {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.registro_form input[type=text],
+.registro_form input[type=email],
+.registro_form input[type=password] {
+    font-size: 18px;
+    max-width: 100%;
+    border-color: transparent;
+    padding: 6px;
+    width: 300px;
+}
+
+.registroContenedorbtn {
+    display: flex;
+    justify-content: center;
+}
+
+.registrobtn {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
+    width: 250px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: #00377B;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.registrobtn:hover {
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgb(32, 186, 29);
+    background-color: rgb(32, 186, 29);
+}
+
+.registroContenedorError {
+    position: relative;
+    width: 100%;
+}
+
+.registro_error {
+    position: absolute;
+    color: red;
+}
+
+/* RESERVAS */
+
+.reservas_contenedores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.reservas_titulo {
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
+.reservas_datos {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    /* Añade margen para crear espacio entre tarjetas */
+    width: 100%;
+}
+
+.centrar-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.reservas_filas {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 40px);
+    /* Ajusta para incluir el margen */
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.reservas_filasNo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.reservas_imagen {
+    width: 100%;
+    height: 500px;
+    max-width: none;
+    /* Permite que la imagen se ajuste completamente a lo ancho */
+    object-fit: cover;
+    /* Asegura que la imagen mantenga sus proporciones */
+    margin-bottom: 30px;
+}
+
+.reservas_lugar {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+.reservas_informacion {
+    margin: auto 20px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+}
+
+.reservas_resaltar {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+}
+
+.sinReserva {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    /* Asegura que ocupe el 100% de la altura del contenedor padre */
+    width: 100%;
+    /* Asegura que ocupe el 100% del ancho del contenedor padre */
+    margin-top: 50px;
+    /* Ajusta el margen según tus necesidades */
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 20px;
+}
+
+.boton-redireccion {
+    display: inline-block;
+    padding: 30px 35px;
+    font-size: 16px;
+    font-family: "Playwrite IT Moderna", cursive;
+    color: #fff;
+    background-color: #f34646;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+
+}
+
+.boton-redireccion:hover {
+    background-color: #4fa2fc;
+}
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reservas_filas {
+        width: 100%;
+        /* Ocupa toda la pantalla en dispositivos más pequeños */
+        flex-direction: column;
+        /* Asegura que la dirección sea en columna */
+    }
+
+    .reservas_datos {
+        width: 90%;
+        /* Ajusta el ancho de las tarjetas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .reservas_titulo {
+        font-size: 50px;
+        /* Reduce el tamaño del título en pantallas muy pequeñas */
+    }
+
+    .reservas_imagen,
+    .reservas_imagen2 {
+        width: 100%;
+        height: auto;
+        /* Asegura que la imagen se redimensione correctamente */
+        margin-bottom: 20px;
+    }
+
+    .reservas_lugar {
+        font-size: 24px;
+        /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+
+    .reservas_informacion {
+        font-size: 18px;
+        /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    .registro_campos {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .registro_form {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .registro_form {
+        width: 100%;
+    }
+
+    .registro_form input[type=text],
+    .registro_form input[type=email],
+    .registro_form input[type=password] {
+        font-size: 20px;
+        padding: 6px;
+        width: auto;
+
+    }
+
+    .registro_columna {
+        gap: 25px;
+    }
+
+    .registro_img {
+        width: 120px;
+    }
+
+    .registrobtn {
+        width: 200px;
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .registro_form {
+
+        width: 100%;
+    }
+
+    .registrobtn {
+        width: 180px;
+        font-size: 14px;
+    }
+
+    .registro_form {
+        width: 100%;
+    }
+
+    .registro_form input[type=text],
+    .registro_form input[type=email],
+    .registro_form input[type=password] {
+        font-size: 20px;
+        padding: 6px;
+        width: 1000px;
+    }
+}

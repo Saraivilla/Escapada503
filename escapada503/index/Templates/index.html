@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escapada 503</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'indexStyles.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+
+
+    <!--Estilos de letra de nuestra paginita -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+    <!--ESTILO DEL EVENTOS-->
+    <style>
+        /*APARTADO DE EVENTOS DE TEMPORADA*/
+        .seccionEvento {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Puedes ajustar esta altura según tus necesidades */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("/static/img/Farolitos.jpeg") no-repeat center center/cover;
+            margin-top: 65px;
+            margin-bottom: 50px;
+        }
+
+        .user-icon {
+            color: white;
+            margin-right: 8px;
+        }
+    </style>
+
+    <!--ICONO DE USUARIO-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header_style">
+            <div class="contenido_header">
+                <div class="left_section">
+                    <a href="{% url 'index-url' %}"><img class="logo" src="{% static 'img/logo.png' %}"
+                            alt="Logo de Escapada 503"></a>
+                    <h2 class="header_titulo">Escapada 503</h2>
+                </div>
+                <div class="barraBusqueda">
+                    <label class="lbl_busqueda">Busqueda</label>
+                    <input class="searchInput barra" type="text">
+                </div>
+                <div class="hamburger">
+                    &#9776;
+                </div>
+
+
+            </div>
+
+            <div class="menu_opcionesHeader" id="menu_opcionesHeader">
+
+                <div class="barraBusqueda_Menu">
+                    <label class="lbl_busqueda">Busqueda</label>
+                    <input class="searchInput barra" type="text">
+                </div>
+                <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                <a href="{% url 'blog-url' %}">Blog</a>
+                <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+
+                <!-- Nueva sección de usuario -->
+                <div class="user_section">
+                    <div class="user_info" id="userInfo">
+                        <span class="user_name">{{user.username}}</span>
+                        <span class="user_menu">&#9662;</span>
+                    </div>
+                    <div class="user_options" id="userOptions">
+                        <a href="{% url 'reservas' %}">Reservas</a>
+                        <a href="{% url 'perfil' %}">Editar info</a>
+                        <a href="{% url 'cambioContraseña' %}">Cambiar Contraseña</a>
+                        <a href="{% url 'login' %}" id="logoutLink">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container contenido">
+        <div class="content-wrapper">
+            <div class="message">
+                <h2 class="mensajeHeader">EL SALVADOR MÁGICO</h2>
+                <p class="form_label">Explora la belleza y cultura de El Salvador. Descubre destinos mágicos, desde
+                    playas hasta montañas y
+                    ciudades coloniales.</p>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="{% static 'img/ThiloDeininger.jpg' %}" class="slide-image" alt="Walter Thilo Deininger">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="{% static 'img/CentroHistorico.png' %}" class="slide-image" alt="Centro Historico">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="{% static 'img/Libertad.jpg' %}" class="slide-image" alt="La Libertad">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <!--Este parte permite crear una linea divisora para colocar el texto-->
+    <div class="divisor divisorLugares">
+        <hr class="lineaSeparadora">
+        <h2 class="container textoDivisor">LUGARES DESTACADOS</h2>
+    </div>
+
+    <!--Apartado para mostrar los lugares destacados-->
+    <div class="containerLugares contenido">
+        <div class="card">
+            <h2>Cerro Verde</h2>
+            <p>El Cerro Verde se ubica en el departamento de Santa Ana, a 77 kilómetros de San Salvador. Este parque
+                cuenta con una extensión de 54 manzanas, los senderos interpretativos: “Las Flores Misteriosas”, “Una
+                Ventana a la Naturaleza”, y el “Antiguo Hotel de Montaña”, caminatas a los volcanes de Izalco (altura
+                1,980 metros sobre el nivel del mar) y Santa Ana (altura 2,381 metros sobre el nivel del mar),
+                miradores, área de juegos recreativos, abundante flora y fauna, modernos servicios sanitarios,
+                estacionamiento y cafetería, entre otros.
+            </p>
+            <img src="{% static 'img/CerroVerde.jpg' %}" alt="Cerro Verde">
+        </div>
+        <div class="card">
+            <h2>Ahuachapán</h2>
+            <p>Ahuachapán, ubicado en el occidente de El Salvador, posee destinos únicos donde podrás disfrutar desde un
+                café de altura, hasta conocer de sus tradiciones.
+                Uno de los principales atractivos es la Parroquia de La Asunción, considerada una joya arquitectónica,
+                por su edificación de estilo colonial con más de 100 años de antigüedad. Cada año, en honor a su santa
+                patrona se celebra el Día de los Farolitos, antesala a la Natividad de la Virgen María, donde sus
+                principales calles y otros municipios aledaños son decorados con farolitos hechos artesanalmente.
+            </p>
+            <img src="{% static 'img/Concordia.jpg' %}" alt="Parque La Concordia">
+        </div>
+        <div class="card">
+            <h2>Suchitoto</h2>
+            <p>Suchitoto, ubicado a 47 kilómetros de la capital. Esta ciudad colonial alberga una invaluable riqueza
+                cultural e histórica, la cual se funde con la naturaleza y sus imponentes vistas, haciendo honor a su
+                significado en Náhuatl “lugar de pájaros y flores”. Este destino albergó la primera capital del país en
+                1528 y su característica comercial es muy visible en la zona, ahora convertida en un bastión turístico
+                rodeado de hostales, restaurantes y cafés pintorescos que dan la sensación de estar en la época
+                colonial.
+            </p>
+            <img src="{% static 'img/Suchitoto.jpg' %}" alt="Suchitoto">
+        </div>
+
+        <div class="card">
+            <h2>Cerro Eramón</h2>
+            <p>Desde la cúspide del Cerro Eramón, verás maravillosos paisajes, como: el Embalse de la Central
+                Hidroeléctrica 5 de Noviembre, la represa del Cerrón Grande, el río Lempa, el río Sumpul y los volcanes
+                Chinchontepec, San Salvador, Guazapa y Chaparrastique. Mientras que, al oeste apreciarás el imponente
+                volcán de Izalco, el Cerro Verde, el volcáanitas-tours y el volcán El Chingo. Este lugar es perfecto
+                para hacer senderismo, camping, así como disfrutar de amaneceres y atardeceres espectaculares.
+            </p>
+
+            <img src="{% static 'img/CerroEramon.jpg' %}" alt="Centro Historico">
+        </div>
+    </div>
+
+    <!--Este parte permite crear una linea divisora para colocar el texto-->
+    <div class="divisor divisorLugares">
+        <hr class="lineaSeparadora">
+        <h2 class="container textoDivisor">EVENTOS DE TEMPORADA</h2>
+    </div>
+
+    <!--En este apartado ira los eventos por temporada-->
+    <div class="seccion_Evento contenido">
+        <div class="contenidoEvento">
+            <h2>Festival de los Farolitos</h2>
+            <p>Ahuachapán</p>
+            <p>07 de Septiembre de 2024</p>
+        </div>
+    </div>
+
+    <!--Este parte permite crear una linea divisora para colocar el texto-->
+    <div class="divisor divisorLugares">
+        <hr class="lineaSeparadora">
+        <h2 class="container textoDivisor">En cada rincón de El Salvador, hay una historia por
+            descubrir</h2>
+    </div>
+
+    <!-- CARDS -->
+    <div class="card-container">
+        <div class="card-item" onclick="showCardInfo(0)">
+            <div class="card-front">
+                <img src="{% static 'img/El Tunco.jpg' %}" alt="El Tunco">
+            </div>
+            <div class="card-back card-info" id="card-info0">La playa El Tunco en Tamanique, La Libertad. Ubicado a solo
+                7 kilómetros al occidente del puerto de La Libertad,
+                su nombre se debe a una inmensa roca, semi sumergida en su playa, que en alguna época remota, sugería la
+                forma de este simpático animal. Visitado semanalmente por cientos de turistas locales y extranjeros, el
+                que allá por los años setentas y ochentas fue un pequeño caserío, al lado de un tranquilo estero.</div>
+        </div>
+        <div class="card-item" onclick="showCardInfo(1)">
+            <div class="card-front">
+                <img src="{% static 'img/Tazumal.jpg' %}" alt="Tazumal">
+            </div>
+            <div class="card-back card-info" id="card-info1">Parque Arqueológico Tazumal, en Chalchuapa. Tazumal fue el
+                escenario de un importante y sofisticado asentamiento maya que existió alrededor de los años 100 y 1200
+                d.C. Tras una larga ocupación, el sitio fue abandonado alrededor del año 1200 d.C. y ahora es un tesoro
+                lleno de historia.La estructura 1 es una de las principales, con 24 metros de altura y 13 etapas de
+                construcción fechadas entre el 100 y el 800 d.C.</div>
+        </div>
+        <div class="card-item" onclick="showCardInfo(2)">
+            <div class="card-front">
+                <img src="{% static 'img/Amapulapa.jpg' %}" alt="Amapulapa">
+            </div>
+            <div class="card-back card-info" id="card-info2">Amapulapa, San Vicente. La riqueza de este parque natural
+                se encuentra en su suelo de origen volcánico dominado por cenizas y lava en el que afloran muchos
+                nacimientos de agua de los cuales se nutre la zona. La flora está caracterizada por los gigantes y
+                hermosos Amates que brindan un espeso follaje y los cuales embellecen el lugar.Entre los principales
+                servicios que ofrece este parque se encuentran cuatro piscinas naturales para adultos, un tobogán
+                acuático, tres piscinas para niños con juegos interactivos, entre otros.</div>
+        </div>
+    </div>
+
+    <!--Apartado del Footer-->
+    <footer>
+        <div class="footer_style">
+            <div clas=footer_contenido>
+                <div>
+                    <h2 class="footer_titulo">Escapada 503</h2>
+                </div>
+
+                <div class="contactos">
+                    <a href="#"><img src="{% static 'img/instagram.png' %}"></a>
+                    <a href="mailto:ejemplo@gmail.com"><img src="{% static 'img/correo.png' %}"></a>
+                    <a href="https://wa.me/78776390"><img src="{% static 'img/whatsapp.png' %}"></a>
+                    <a href="tel:+50378776390"><img src="{% static 'img/Telefono.png' %}"></a>
+                </div>
+
+                <div class="menu_opciones">
+                    <a href="{% url 'nosotros-url' %}">Más sobre nosotros</a>
+                    <a href="{% url 'guias-url' %}">Guías Turísticos</a>
+                    <a href="{% url 'paquetes-url' %}">Paquetes</a>
+                    <a href="{% url 'blog-url' %}">Blog</a>
+                    <a href="{% url 'contactanos-url' %}">Contáctanos</a>
+                </div>
+
+                <div class="derechos">
+                    <p>
+                        Copyright © 2024 Escapada 503. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (logoutLink) {
+                logoutLink.addEventListener('click', function (event) {
+                    const isConfirmed = confirm("¿Estás seguro de que quieres cerrar sesión?");
+                    if (!isConfirmed) {
+                        event.preventDefault(); // Evita que el enlace sea seguido
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="{% static 'scripts.js'%}"></script>
+</body>
+
+</html>

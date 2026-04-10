@@ -1,0 +1,423 @@
+/* ESTILOS GLOBALES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* HEADER */
+.header_style {
+    display: flex;
+    flex-direction: column;
+    background-color: #00377B;
+}
+
+.mensajeHeader {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 100px;
+}
+
+.contenido_header {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    /* Alinea los elementos verticalmente al centro */
+}
+
+.left_section {
+    display: flex;
+    align-items: center;
+}
+
+.header_titulo {
+    color: white;
+    font-size: 45px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.menu_opcionesHeader {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    background-color: #02489e;
+    padding: 10px;
+}
+
+.menu_opcionesHeader a,
+.menu_opciones a {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.menu_opcionesHeader a:hover {
+    color: rgb(249, 252, 62);
+}
+
+.logo {
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+}
+
+.barraBusqueda {
+    margin-right: 10px;
+}
+
+.barraBusqueda_Menu {
+    display: none;
+}
+
+.barra {
+    border-radius: 20px;
+    width: 400px;
+    border-color: transparent;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.lbl_busqueda {
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.lbl_busqueda {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+/*CODIGO DE LA SESION DE CERRAR USUARIO*/
+.user_section {
+    position: relative;
+    display: inline-block;
+}
+
+.user_info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user_name {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_menu {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.user_options a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user_options a:hover {
+    background-color: #f1f1f1;
+    color: #00377B;
+}
+
+/* CONTENEDORES PRINCIPALES Y DIVISORES */
+.container {
+    padding: 32px;
+    /* 2rem */
+}
+
+/*LINEA SEPARADORA (DONDE SE COLOCA EL TEMA)*/
+.divisor {
+    position: relative;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.lineaSeparadora {
+    border: 0;
+    height: 5px;
+    background-color: #cccccc;
+}
+
+.textoDivisor {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center;
+}
+
+/*APARTADO DE LUGARES DESTACADOS*/
+.containerLugares {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 700px;
+    text-align: center;
+}
+
+.card h2 {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 25px;
+    color: #666;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+}
+
+.card img {
+    width: 100%;
+    /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+    height: 400px;
+    /* Define una altura fija para las imágenes */
+    object-fit: cover;
+    /* Asegura que la imagen se recorte para llenar el área definida sin distorsionarse */
+    border-radius: 10px;
+}
+
+
+
+
+/*APARTADO DEL FOOTER (FINAL DE LA PAGINA)*/
+.footer_style {
+    background-color: #00377B;
+    padding: 5px;
+}
+
+.footer_contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_titulo {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.contactos {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.menu_opciones {
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.derechos {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/*****************ESTE APARTADO PERTECENE A NOSOTROS************/
+.titleNosotros {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 50px;
+    text-align: center;
+}
+
+/*Este apartado de Codigo permite la responsibidad*/
+@media (max-width: 768px) {
+    .barraBusqueda {
+        display: none;
+    }
+
+    .barraBusqueda_Menu {
+        display: flex;
+        /* Mostrar la barra de búsqueda dentro del menú hamburguesa */
+        margin-bottom: 10px;
+        /* Espacio opcional debajo de la barra de búsqueda */
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+    }
+
+    .menu_opcionesHeader {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .barra {
+        border-radius: 20px;
+        width: 200px;
+        border-color: transparent;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .menu_opcionesHeader a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu_opcionesHeader.show {
+        display: flex;
+    }
+
+    .mensajeHeader {
+        font-size: 1.5em;
+    }
+
+    .form_label {
+        font-size: 1em;
+    }
+
+    .divisor {
+        margin-bottom: 100px;
+    }
+
+    .header_titulo {
+        display: none;
+    }
+
+    /*EVENTOS RESPONSIVE*/
+    .seccionEvento {
+        height: 75vh;
+    }
+
+
+    /*IMAGENES RESPONSIVE*/
+    .textoDivisor {
+        font-size: 20px;
+    }
+
+    .card-container {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /*FOOTER RESPONSIVE*/
+    .footer_contenido {
+        flex-direction: column;
+    }
+
+    .contactos {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu_opciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        /* Ajusta el espacio entre los elementos */
+    }
+
+    .footer_titulo {
+        font-size: 25px;
+        /* Reducir el tamaño del título para dispositivos más pequeños */
+    }
+}
+
+@media (max-width: 1262px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
