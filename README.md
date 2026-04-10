@@ -14,11 +14,11 @@ Plataforma web desarrollada con HTML, CSS, JavaScript, Django y SQLite para prom
 - Cambio de contraseña
 
 🛠️ Tecnologías:
-HTML
-CSS
-JavaScript
-Django
-SQLite
+- HTML
+- CSS
+- JavaScript
+- Django
+- SQLite
 
 📚 Proyecto académico:
 Este proyecto fue desarrollado como parte de un curso universitario de desarrollo web.
